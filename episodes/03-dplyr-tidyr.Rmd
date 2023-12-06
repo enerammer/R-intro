@@ -1,15 +1,23 @@
 ---
 title: "Data Wrangling with dplyr and tidyr"
-keypoints:
-- Use the `dplyr` package to manipulate dataframes.
-- Use `select()` to choose variables from a dataframe.
-- Use `filter()` to choose data based on values.
-- Use `group_by()` and `summarize()` to work with subsets of data.
-- Use `mutate()` to create new variables.
-- Use the `tidyr` package to change the layout of dataframes.
-- Use `pivot_wider()` to go from long to wide format.
-- Use `pivot_longer()` to go from wide to long format.
-objectives:
+
+teaching: 20
+exercises: 10
+
+---
+
+:::: questions
+
+- How can I select specific rows and/or columns from a dataframe?
+- How can I combine multiple commands into a single command?
+- How can I create new columns or remove existing columns from a dataframe?
+- How can I reformat a dataframe to meet my needs?
+
+::::
+
+
+:::: objectives
+
 - Describe the purpose of an R package and the **`dplyr`** and **`tidyr`** packages.
 - Select certain columns in a dataframe with the **`dplyr`** function `select`.
 - Select certain rows in a dataframe according to filtering conditions with the **`dplyr`**
@@ -27,16 +35,8 @@ objectives:
 - Reshape a dataframe from long to wide format and back with the `pivot_wider` and
   `pivot_longer` commands from the **`tidyr`** package.
 - Export a dataframe to a csv file.
-questions:
-- How can I select specific rows and/or columns from a dataframe?
-- How can I combine multiple commands into a single command?
-- How can I create new columns or remove existing columns from a dataframe?
-- How can I reformat a dataframe to meet my needs?
-teaching: 20
-exercises: 10
-source: Rmd
----
 
+::::
 
 ```{r, include = FALSE}
 library(dplyr)
@@ -476,4 +476,15 @@ if (!dir.exists("../data_output")) dir.create("../data_output")
 write_csv(interviews, "../data_output/interviews_plotting.csv")
 ```
 
-{% include links.md %}
+:::: keypoints
+
+- Use the `dplyr` package to manipulate dataframes.
+- Use `select()` to choose variables from a dataframe.
+- Use `filter()` to choose data based on values.
+- Use `group_by()` and `summarize()` to work with subsets of data.
+- Use `mutate()` to create new variables.
+- Use the `tidyr` package to change the layout of dataframes.
+- Use `pivot_wider()` to go from long to wide format.
+- Use `pivot_longer()` to go from wide to long format.
+
+::::
