@@ -2,11 +2,25 @@
 title: "Before we Start"
 teaching: 10
 exercises: 5
-questions:
+---
+
+
+
 - "How to find your way around RStudio?"
 - "How to interact with R?"
 - "How to manage your environment?"
 - "How to install packages?"
+
+
+
+```{r, include = FALSE}
+#source("../bin/chunk-options.R")
+#knitr_fig_path("00-")
+#source("../bin/download_data.R")
+```
+
+questions:
+
 objectives:
 - "Install latest version of R."
 - "Install latest version of RStudio."
@@ -17,13 +31,6 @@ keypoints:
 - "Use RStudio to write and run R programs."
 - "Use `install.packages()` to install packages (libraries)."
 source: Rmd
----
-
-```{r, include = FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("00-")
-source("../bin/download_data.R")
-```
 
 
 ## What is R? What is RStudio?
