@@ -22,11 +22,7 @@ keypoints:
 source: Rmd
 ---
 
-```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("04-")
-source("../bin/download_data.R")
-```
+
 
 We start by loading the **`tidyverse`** package.
 
