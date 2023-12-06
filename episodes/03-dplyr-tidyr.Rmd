@@ -236,22 +236,28 @@ interviews_ch
 Note that the final dataframe (`interviews_ch`) is the leftmost part of this
 expression.
 
-> ## Exercise
->
->  Using pipes, subset the `interviews` data to include interviews
-> where respondents were members of an irrigation association
-> (`memb_assoc`) and retain only the columns `affect_conflicts`,
-> `liv_count`, and `no_meals`.
->
-> > ## Solution
-> >
-> > ```{r}
-> > interviews %>%
-> >     filter(memb_assoc == "yes") %>%
-> >     select(affect_conflicts, liv_count, no_meals)
-> > ```
-> {: .solution}
-{: .challenge}
+
+:::: challenge
+
+
+## Exercise
+
+  Using pipes, subset the `interviews` data to include interviews
+ where respondents were members of an irrigation association
+ (`memb_assoc`) and retain only the columns `affect_conflicts`,
+ `liv_count`, and `no_meals`.
+
+:::: solution
+ ## Solution
+
+ ```{r}
+ interviews %>%
+     filter(memb_assoc == "yes") %>%
+     select(affect_conflicts, liv_count, no_meals)
+ ```
+
+::::
+
 
 ### Mutate
 
@@ -270,29 +276,32 @@ interviews %>%
 
 
 
+:::: challenge 
 
-> ## Exercise
->
->  Create a new dataframe from the `interviews` data that meets the following
->  criteria: contains only the `village` column and a new column called
->  `total_meals` containing a value that is equal to the total number of meals
->  served in the household per day on average (`no_membrs` times `no_meals`).
->  Only the rows where `total_meals` is greater than 20 should be shown in the
->  final dataframe.
->
->  **Hint**: think about how the commands should be ordered to produce this data
->  frame!
->
-> > ## Solution
-> >
-> > ``` {r}
-> > interviews_total_meals <- interviews %>%
-> >     mutate(total_meals = no_membrs * no_meals) %>%
-> >     filter(total_meals > 20) %>%
-> >     select(village, total_meals)
-> > ```
-> {: .solution}
-{: .challenge}
+## Exercise
+
+Create a new dataframe from the `interviews` data that meets the following
+criteria: contains only the `village` column and a new column called
+`total_meals` containing a value that is equal to the total number of meals
+served in the household per day on average (`no_membrs` times `no_meals`).
+Only the rows where `total_meals` is greater than 20 should be shown in the
+final dataframe.
+
+**Hint**: think about how the commands should be ordered to produce this data
+frame!
+
+:::: solution
+
+## Solution
+
+ ``` {r}
+ interviews_total_meals <- interviews %>%
+     mutate(total_meals = no_membrs * no_meals) %>%
+     filter(total_meals > 20) %>%
+     select(village, total_meals)
+ ```
+
+::::
 
 ### Split-apply-combine data analysis and the summarize() function
 
@@ -394,6 +403,10 @@ decreasing order:
 interviews %>%
     count(village, sort = TRUE)
 ```
+
+
+
+
 
 > ## Exercise
 >
