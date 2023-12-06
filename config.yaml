@@ -14,7 +14,7 @@ carpentry: 'incubator'
 title: 'Introduktion til R'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 
+created:
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries, KUB Datalab'
@@ -58,7 +58,7 @@ contact: 'kubdatalab@kb.dk'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - introduction.md
 - next-episode.Rmd
 - 01-next-episode.Rmd
@@ -66,13 +66,14 @@ episodes:
 - 00-next-episode.Rmd
 
 # Information for Learners
-learners: 
+learners:
+- setup.md
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
