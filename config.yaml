@@ -64,6 +64,9 @@ episodes:
 - 01-next-episode.Rmd
 - 02-next-episode.Rmd
 - 00-next-episode.Rmd
+- 00-intro.Rmd
+
+
 
 # Information for Learners
 learners:
