@@ -408,54 +408,52 @@ interviews %>%
 
 
 
-> ## Exercise
->
-> How many households in the survey have an average of
-> two meals per day? Three meals per day? Are there any other numbers
-> of meals represented?
->
-> > ## Solution
-> >
-> > ```{r}
-> > interviews %>%
-> >    count(no_meals)
-> > ```
-> {: .solution}
->
-> Use `group_by()` and `summarize()` to find the mean, min, and max
-> number of household members for each village. Also add the number of
-> observations (hint: see `?n`).
->
-> > ## Solution
-> >
-> > ```{r}
-> > interviews %>%
-> >   group_by(village) %>%
-> >   summarize(
-> >       mean_no_membrs = mean(no_membrs),
-> >       min_no_membrs = min(no_membrs),
-> >       max_no_membrs = max(no_membrs),
-> >       n = n()
-> >   )
-> > ```
-> {: .solution}
->
-> What was the largest household interviewed in each month?
->
-> > ## Solution
-> >
-> > ```{r}
-> > # if not already included, add month, year, and day columns
-> > library(lubridate) # load lubridate if not already loaded
-> > interviews %>%
-> >     mutate(month = month(interview_date),
-> >            day = day(interview_date),
-> >            year = year(interview_date)) %>%
-> >     group_by(year, month) %>%
-> >     summarize(max_no_membrs = max(no_membrs))
-> > ```
-> {: .solution}
-{: .challenge}
+ ## Exercise
+
+ How many households in the survey have an average of
+ two meals per day? Three meals per day? Are there any other numbers
+ of meals represented?
+
+## Solution
+
+```{r}
+ interviews %>%
+  count(no_meals)
+```
+
+ Use `group_by()` and `summarize()` to find the mean, min, and max
+ number of household members for each village. Also add the number of
+ observations (hint: see `?n`).
+
+## Solution
+
+ ```{r}
+interviews %>%
+  group_by(village) %>%
+   summarize(
+       mean_no_membrs = mean(no_membrs),
+       min_no_membrs = min(no_membrs),
+       max_no_membrs = max(no_membrs),
+       n = n()
+   )
+```
+ {: .solution}
+
+ What was the largest household interviewed in each month?
+
+ ## Solution
+
+ ```{r}
+ # if not already included, add month, year, and day columns
+ library(lubridate) # load lubridate if not already loaded
+ interviews %>%
+     mutate(month = month(interview_date),
+            day = day(interview_date),
+            year = year(interview_date)) %>%
+     group_by(year, month) %>%
+     summarize(max_no_membrs = max(no_membrs))
+ ```
+
 
 
 ## Exporting data
