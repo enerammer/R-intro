@@ -4,27 +4,24 @@ teaching: 10
 exercises: 5
 ---
 
+:::: questions
 
+- How to find your way around RStudio?
+- How to interact with R?
+- How to manage your environment?
+- How to install packages?
 
-- "How to find your way around RStudio?"
-- "How to interact with R?"
-- "How to manage your environment?"
-- "How to install packages?"
+::::::
 
+::::::::::::::::::::::::::::::::::::: objectives
 
+- Install latest version of R.
+- Install latest version of RStudio.
+- Navigate the RStudio GUI.
+- Install additional packages using the packages tab.
+- Install additional packages using R code.
 
-questions:
-
-objectives:
-- "Install latest version of R."
-- "Install latest version of RStudio."
-- "Navigate the RStudio GUI."
-- "Install additional packages using the packages tab."
-- "Install additional packages using R code."
-keypoints:
-- "Use RStudio to write and run R programs."
-- "Use `install.packages()` to install packages (libraries)."
-source: Rmd
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## What is R? What is RStudio?
@@ -120,12 +117,12 @@ freely available to extend R's native capabilities.
 <div class="row">
 <div class="col-md-6">
 ```{r rstudio-analogy, echo = FALSE, fig.show = "hold", out.width = "100%", fig.alt = "RStudio extends what R can do, and makes it easier to write R code and interact with R."}
-knitr::include_graphics("../fig/r-manual.jpeg")
+knitr::include_graphics("./fig/r-manual.jpeg")
 ```
 </div>
 <div class="col-md-6">
 ```{r rstudio-analogy-2, echo = FALSE, fig.show = "hold", fig.alt = "automatic car gear shift representing the ease of RStudio", out.width="100%"}
-knitr::include_graphics("../fig/r-automatic.jpeg")
+knitr::include_graphics("./fig/r-automatic.jpeg")
 ```
 </div>
 </div>
@@ -418,3 +415,10 @@ was written to the console before the start of the installation messages.
 You could also have installed the **`tidyverse`** packages by running this command directly at the R terminal.
 
 {% include links.md %}
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Use RStudio to write and run R programs.
+- Use `install.packages()` to install packages (libraries).
+
+::::::::::::::::::::::::::::::::::::::::::::::::
