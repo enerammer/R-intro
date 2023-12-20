@@ -53,14 +53,14 @@ Similarly to **`readr`**, **`dplyr`** and **`tidyr`** are also part of the
 tidyverse. These packages were loaded in R's memory when we called
 `library(tidyverse)` earlier.
 
-> ## Note
->
-> The packages in the tidyverse, namely **`dplyr`**, **`tidyr`** and **`ggplot2`**
-> accept both the British (e.g. *summarise*) and American (e.g. *summarize*) spelling
-> variants of different function and option names. For this lesson, we utilize
-> the American spellings of different functions; however, feel free to use
-> the regional variant for where you are teaching.
-{: .callout}
+ ## Note husk dette er en callout!
+
+ The packages in the tidyverse, namely **`dplyr`**, **`tidyr`** and **`ggplot2`**
+ accept both the British (e.g. *summarise*) and American (e.g. *summarize*) spelling
+ variants of different function and option names. For this lesson, we utilize
+ the American spellings of different functions; however, feel free to use
+ the regional variant for where you are teaching.
+
 
 ## What is an R package?
 
@@ -427,7 +427,7 @@ interviews %>%
 
 ## Solution
 
- ```{r}
+```{r}
 interviews %>%
   group_by(village) %>%
    summarize(
@@ -437,13 +437,12 @@ interviews %>%
        n = n()
    )
 ```
- {: .solution}
 
  What was the largest household interviewed in each month?
 
- ## Solution
+## Solution
 
- ```{r}
+```{r}
  # if not already included, add month, year, and day columns
  library(lubridate) # load lubridate if not already loaded
  interviews %>%
@@ -452,7 +451,7 @@ interviews %>%
             year = year(interview_date)) %>%
      group_by(year, month) %>%
      summarize(max_no_membrs = max(no_membrs))
- ```
+```
 
 
 
