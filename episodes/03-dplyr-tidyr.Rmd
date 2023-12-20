@@ -246,15 +246,15 @@ expression.
  where respondents were members of an irrigation association
  (`memb_assoc`) and retain only the columns `affect_conflicts`,
  `liv_count`, and `no_meals`.
-
+::::
 :::: solution
- ## Solution
+## Solution
 
- ```{r}
+```{r}
  interviews %>%
      filter(memb_assoc == "yes") %>%
      select(affect_conflicts, liv_count, no_meals)
- ```
+```
 
 ::::
 
@@ -289,7 +289,7 @@ final dataframe.
 
 **Hint**: think about how the commands should be ordered to produce this data
 frame!
-
+::::
 :::: solution
 
 ## Solution
