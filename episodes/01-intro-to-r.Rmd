@@ -673,7 +673,7 @@ A dataframe is made up by columns of vectors, so we can combine the three vector
 to a dataframe.
 
 
-```{r, results='show', purl=FALSE}
+```{r sidste_codechunk, results='show', purl=FALSE}
 df <- data.frame(title, imdb_score, production_country)
 df
 ```
