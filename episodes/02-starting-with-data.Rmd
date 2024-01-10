@@ -255,7 +255,7 @@ interviews[-c(7:131), ]   # Equivalent to head(interviews)
 `tibble`s can be subset by calling indices (as shown previously), but also by
 calling their column names directly:
 
-```{r, eval = FALSE, purl = FALSE}
+```{r result_is_a_tibble, eval = FALSE, purl = FALSE}
 interviews["village"]       # Result is a tibble
 
 interviews[, "village"]     # Result is a tibble
