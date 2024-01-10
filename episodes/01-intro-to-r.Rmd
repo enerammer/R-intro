@@ -34,7 +34,7 @@ exercises: 10
 
 You can get output from R simply by typing math in the console:
 
-```{r, purl=FALSE}
+```{r math, purl=FALSE}
 3 + 5
 12 / 7
 ```
@@ -43,7 +43,7 @@ However, to do useful and interesting things, we need to assign _values_ to
 _objects_. To create an object, we need to give it a name followed by the
 assignment operator `<-`, and the value we want to give it:
 
-```{r, purl=FALSE}
+```{r assignment, purl=FALSE}
 x <- 3
 ```
 
@@ -123,7 +123,7 @@ When assigning a value to an object, R does not print anything. You
 can force R to print the value by using parentheses or by typing
 the object name:
 
-```{r, purl=FALSE}
+```{r print, purl=FALSE}
 area_hectares <- 1.0    # doesn't print anything
 area_hectares         # but typing the name of the object print
 (area_hectares <- 1.0)  # putting parenthesis around the call also print
@@ -134,13 +134,13 @@ area_hectares         # but typing the name of the object print
 
 Now that R has `area_hectares` in memory, we can do arithmetic with it. For instance, we may want to convert this area into acres (area in acres is 2.47 times the area in hectares): 
 
-```{r, purl=FALSE}
+```{r mathObjects, purl=FALSE}
 2.47 * area_hectares
 ```
 
 We can also change an object’s value by assigning it a new one:
 
-```{r, purl=FALSE}
+```{r toAcres, purl=FALSE}
 area_hectares <- 2.5
 2.47 * area_hectares
 ```
