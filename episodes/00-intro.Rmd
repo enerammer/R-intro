@@ -157,7 +157,7 @@ error-prone.
 
 Let's take a quick tour of RStudio.
 
-![RStudio interface](../fig/R_00_Rstudio_01.png){alt='A picture of RStudios interface'}
+![RStudio interface](fig/R_00_Rstudio_01.png){alt='A picture of RStudios interface'}
 
 RStudio is divided into four "panes". The placement of these
 panes and their content can be customized (see menu, Tools -> Global Options ->
