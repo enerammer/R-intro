@@ -77,14 +77,14 @@ When you load  the **`tidyverse`** (`library(tidyverse)`), the core packages
 
 Before we can use the `read_csv()` we need to load the tidyverse package.
 
-```{r, eval = TRUE,  message = FALSE, purl = FALSE, echo = FALSE}
+```{r, eval = TRUE,  message = FALSE, purl = FALSE, echo = TRUE, warning = FALSE}
 library(tidyverse)
 ```
 
 After this we can read in the data set.
 
-```{r, eval = TRUE,  message = FALSE, purl = FALSE, echo = FALSE}
-movieSerie <- read_csv("./data/movieSerie.csv", na = "NULL")
+```{r, eval = TRUE,  message = FALSE, purl = FALSE, echo = TRUE}
+movieSerie <- read_csv("data/movieSerie.csv", na = c("NA", "NULL"))
 ```
 
 The first argument `read_csv` takes is the path to til file. The specific path 
@@ -119,7 +119,7 @@ has been loaded, we can see the contents of the data frame by typing its name:
 `interviews` in the console.
 
 ```{r, results = 'hold', purl = FALSE}
-interviews
+movieSerie
 ## Try also
 ## view(interviews)
 ## head(interviews)
