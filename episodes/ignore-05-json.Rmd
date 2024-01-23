@@ -63,7 +63,7 @@ Because detailed surveys are by nature nested structures making it possible to r
 
 library(jsonlite)
 
-json_data <- read_json(path='data/SAFI.json')
+# json_data <- read_json(path='data/SAFI.json')
 
 ```
 
@@ -73,7 +73,7 @@ This is because, by default, the `read_json()` function's parameter `simplifyVec
 
 ```{r}
 
-json_data <- read_json(path='data/SAFI.json', simplifyVector = TRUE)
+# json_data <- read_json(path='data/SAFI.json', simplifyVector = TRUE)
 
 ```
 
@@ -84,8 +84,8 @@ inside (these functions were loaded by `library(tidyverse)`):
 
 ```{r}
 
-json_data <- json_data %>% as_tibble()
-glimpse(json_data)
+# json_data <- json_data %>% as_tibble()
+# glimpse(json_data)
 
 ```
 
@@ -98,8 +98,8 @@ So what can we do about this column of dataframes? Well first things first, we c
 
 ```{r}
 
-json_data$F_liv[1]
-
+# json_data$F_liv[1]
+# 
 ```
 
 
@@ -108,7 +108,7 @@ We can also choose to view the nested dataframes at all the rows of our main dat
 
 ```{r}
 
-json_data$F_liv[which(json_data$C06_rooms==4)]
+# json_data$F_liv[which(json_data$C06_rooms==4)]
 
 ```
 
@@ -118,7 +118,7 @@ If we try to write our json_data dataframe to a csv as we would usuall in a regu
 
 ```{r, eval = FALSE}
 
-write_csv(json_data, file = "SAFI_from_JSON.csv")
+# write_csv(json_data, file = "SAFI_from_JSON.csv")
 
 ```
 
@@ -127,8 +127,8 @@ To write out as a csv, we will need to "flatten" these columns. One thing you ca
 
 ```{r}
 
-flattened_json_data <- apply(json_data,2,as.character) %>%
-  as_tibble()
+# flattened_json_data <- apply(json_data,2,as.character) %>%
+#   as_tibble()
 
 ```
 
@@ -137,7 +137,7 @@ Now you can write this to a csv file:
 
 ```{r, eval = TRUE}
 
-write_csv(flattened_json_data, file = "data_output/SAFI_from_JSON.csv")
+# write_csv(flattened_json_data, file = "data_output/SAFI_from_JSON.csv")
 
 ```
 
@@ -150,7 +150,7 @@ You can also write out the individual nested dataframes to a csv. For example:
 
 ```{r}
 
-write_csv(json_data$F_liv[[1]], file = "data_output/F_liv_row1.csv")
+# write_csv(json_data$F_liv[[1]], file = "data_output/F_liv_row1.csv")
 
 ```
 
