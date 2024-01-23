@@ -19,7 +19,12 @@ keypoints:
 ---
 
 
+:::: questions
 
+- "What do I do now?"
+- "What is the next step?"
+
+::::
 
 
 ## Introduction
