@@ -321,11 +321,11 @@ the `group_by()` function.
 group into a single-row summary of that group. `group_by()` takes as arguments
 the column names that contain the **categorical** variables for which you want
 to calculate the summary statistics. So to compute the average imdb_score by
-age_certification:
+genre:
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification) %>%
+    group_by(genre) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE))
 ```
 
@@ -336,7 +336,7 @@ You can also group by multiple columns:
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification, type) %>%
+    group_by(genre, type) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE))
 ```
 
@@ -345,7 +345,7 @@ Note that the output is a grouped tibble. To obtain an ungrouped tibble, use the
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification, type) %>%
+    group_by(genre, type) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE)) %>%
     ungroup()
 ```
@@ -358,7 +358,7 @@ column indicating the maximum imdb_score given to a movie or serie:
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification, type) %>%
+    group_by(genre, type) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
               max_imdb_score = max(imdb_score, na.rm = TRUE))
 ```
@@ -370,7 +370,7 @@ imdb_score first:
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification, type) %>%
+    group_by(genre, type) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
               max_imdb_score = max(imdb_score, na.rm = TRUE)) %>%
     arrange(max_imdb_score)
@@ -381,7 +381,7 @@ sort the results by decreasing order of minimum imdb_score:
 
 ```{r, purl = FALSE}
 movieSerie %>%
-    group_by(age_certification, type) %>%
+    group_by(genre, type) %>%
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
               max_imdb_score = max(imdb_score, na.rm = TRUE)) %>%
     arrange(desc(max_imdb_score))
@@ -412,57 +412,35 @@ movieSerie %>%
 
 ## Exercise
 
-How many households in the survey have an average of
-two meals per day? Three meals per day? Are there any other numbers
-of meals represented?
+1. How many moview and series are there for each age_certification?
+
+2. Use `group_by()` and `summarize()` to find the mean, min, and max for 
+tmdb_score. Also add the number of observations (hint: see `?n`).
 
 :::::::::::::::::::::::: solution
 
-## Solution
+## Solution 1
 
 ```{r}
- interviews %>%
-  count(no_meals)
+ movieSerie %>%
+  count(age_certification)
 ```
 
- Use `group_by()` and `summarize()` to find the mean, min, and max
- number of household members for each village. Also add the number of
- observations (hint: see `?n`).
- 
 :::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
 
-## Solution
+## Solution 2
 
 ```{r}
-interviews %>%
-  group_by(village) %>%
+movieSerie %>%
+  group_by(genre) %>%
    summarize(
-       mean_no_membrs = mean(no_membrs),
-       min_no_membrs = min(no_membrs),
-       max_no_membrs = max(no_membrs),
+       mean_tmdb_score = mean(tmdb_score, na.rm = TRUE),
+       min_tmdb_score = min(tmdb_score, na.rm = TRUE),
+       max_tmdb_score = max(tmdb_score, na.rm = TRUE),
        n = n()
    )
-```
-
- What was the largest household interviewed in each month?
- 
-:::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: solution
-
-## Solution
-
-```{r}
- # if not already included, add month, year, and day columns
- library(lubridate) # load lubridate if not already loaded
- interviews %>%
-     mutate(month = month(interview_date),
-            day = day(interview_date),
-            year = year(interview_date)) %>%
-     group_by(year, month) %>%
-     summarize(max_no_membrs = max(no_membrs))
 ```
 
 :::::::::::::::::::::::::::::::::
