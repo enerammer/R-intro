@@ -2,7 +2,7 @@ name: Kopier fil til gh-pages
 
 on:
   workflow_run:
-    workflows: ["pr-post-remove-branch"]
+    workflows: ["01 Build and Deploy Site"]
     types:
       - completed
 
