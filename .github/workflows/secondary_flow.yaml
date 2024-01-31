@@ -2,7 +2,7 @@ name: Kopier fil til gh-pages
 
 on:
   workflow_run:
-    workflows: ["Receive Pull Request"]
+    workflows: ["pr-post-remove-branch"]
     types:
       - completed
 
