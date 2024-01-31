@@ -20,7 +20,7 @@ jobs:
         run: curl -o logotest.svg https://kubdatalab.github.io/R-intro/fig/logotest.svg
 
       - name: Kopier fil til det bestemte sted
-        run: mv navn-på-lokal-fil.html assets/images/
+        run: mv logotest.svg assets/images/
 
       - name: Commit og push ændringer
         run: |
