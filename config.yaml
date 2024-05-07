@@ -64,7 +64,7 @@ episodes:
 - 02-starting-with-data.Rmd
 - 03-dplyr-tidyr.Rmd
 - 04-functions-plots.Rmd
-- 05-whats-next.Rmd
+- whats-next.Rmd
 
 # Information for Learners
 learners:
