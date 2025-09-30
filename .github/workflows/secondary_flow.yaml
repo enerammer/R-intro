@@ -22,6 +22,11 @@ jobs:
       - name: Kopier fil til det bestemte sted
         run: mv logotest.svg assets/images/library-logo.svg
 
+      - name: Download favicons
+        run: |
+          mkdir -p favicons/lc
+          wget -r -np -nH --cut-dirs=3 -P favicons/lc https://kubdatalab.github.io/R-intro/fig/favico/
+
       - name: Commit og push ændringer
         run: |
           git config user.name "GitHub Actions"
