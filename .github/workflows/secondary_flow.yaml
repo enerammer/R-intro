@@ -22,10 +22,23 @@ jobs:
       - name: Kopier fil til det bestemte sted
         run: mv logotest.svg assets/images/library-logo.svg
 
-      - name: Download favicons 
+      - name: Hent favicons-mappen fra R-intro (sparse checkout) og kopier til favicons/lc
         run: |
+          set -e
+          TMPDIR="$(mktemp -d)"
+          git clone --depth=1 --filter=blob:none --sparse https://github.com/kubdatalab/R-intro "$TMPDIR"
+          cd "$TMPDIR"
+          # Prøv fig/favico først; hvis den ikke findes, brug fig/favicon
+          if git sparse-checkout set fig/favico 2>/dev/null; then
+            SRC_DIR=fig/favico
+          else
+            git sparse-checkout set fig/favicon
+            SRC_DIR=fig/favicon
+          fi
+          cd -
           mkdir -p favicons/lc
-          wget -r -np -nH --cut-dirs=3 -P favicons/lc https://kubdatalab.github.io/R-intro/fig/favico/
+          # Kopiér ALT indhold fra kildemappen til favicons/lc (overskriver eksisterende filer med samme navn)
+          cp -r "$TMPDIR/$SRC_DIR/." favicons/lc/
 
       - name: Commit og push ændringer
         run: |
