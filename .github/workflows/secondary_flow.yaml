@@ -22,23 +22,24 @@ jobs:
       - name: Kopier fil til det bestemte sted
         run: mv logotest.svg assets/images/library-logo.svg
 
-      - name: Hent favicons-mappen fra R-intro (sparse checkout) og kopier til favicons/lc
+      - name: Hent favicons fra R-intro og kopier til favicons/lc
         run: |
           set -e
           TMPDIR="$(mktemp -d)"
-          git clone --depth=1 --filter=blob:none --sparse https://github.com/kubdatalab/R-intro "$TMPDIR"
-          cd "$TMPDIR"
-          # Prøv fig/favico først; hvis den ikke findes, brug fig/favicon
-          if git sparse-checkout set fig/favico 2>/dev/null; then
-            SRC_DIR=fig/favico
+          git clone --depth=1 https://github.com/kubdatalab/R-intro "$TMPDIR"
+
+          if [ -d "$TMPDIR/fig/favico" ]; then
+            SRC_DIR="$TMPDIR/fig/favico"
+          elif [ -d "$TMPDIR/fig/favicon" ]; then
+            SRC_DIR="$TMPDIR/fig/favicon"
           else
-            git sparse-checkout set fig/favicon
-            SRC_DIR=fig/favicon
+            echo "Fandt hverken fig/favico eller fig/favicon i R-intro-repoet" >&2
+            exit 1
           fi
-          cd -
+
           mkdir -p favicons/lc
-          # Kopiér ALT indhold fra kildemappen til favicons/lc (overskriver eksisterende filer med samme navn)
-          cp -r "$TMPDIR/$SRC_DIR/." favicons/lc/
+          # Kopiér alt indhold (bevarer timestamps/permissions hvor muligt)
+          cp -a "$SRC_DIR/." favicons/lc/
 
       - name: Commit og push ændringer
         run: |
