@@ -2,6 +2,7 @@
 
 This lesson is a template lesson that uses [The Carpentries Workbench][workbench].
 
+Med visset tilføjelser og justeringer som KUB Datalab har behov for.
 
 ## Configure a new lesson
 
