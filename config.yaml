@@ -59,11 +59,11 @@ contact: 'kubdatalab@kb.dk'
 
 # Order of episodes in your lesson
 episodes:
-- 00-intro.Rmd
-- 01-intro-to-r.Rmd
-- 02-starting-with-data.Rmd
-- 03-dplyr-tidyr.Rmd
-- 04-functions-plots.Rmd
+- intro.Rmd
+- intro-to-r.Rmd
+- starting-with-data.Rmd
+- dplyr-tidyr.Rmd
+- functions-plots.Rmd
 - whats-next.Rmd
 
 # Information for Learners
