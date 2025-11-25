@@ -21,10 +21,10 @@ keywords: 'software, data, lesson, The Carpentries, KUB Datalab'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'beta'
+life_cycle: 'stable'
 
 # License of the lesson materials (recommended CC-BY 4.0)
-license: 'CC-BY 4.0'
+license: 'CC-BY 4.0-SA'
 
 # Link to the source repository for this lesson
 source: 'https://github.com/KUBDatalab/R-intro'
@@ -59,11 +59,11 @@ contact: 'kubdatalab@kb.dk'
 
 # Order of episodes in your lesson
 episodes:
-- 00-intro.Rmd
-- 01-intro-to-r.Rmd
-- 02-starting-with-data.Rmd
-- 03-dplyr-tidyr.Rmd
-- 04-functions-plots.Rmd
+- intro.Rmd
+- intro-to-r.Rmd
+- starting-with-data.Rmd
+- dplyr-tidyr.Rmd
+- functions-plots.Rmd
 - whats-next.Rmd
 
 # Information for Learners
@@ -74,7 +74,7 @@ learners:
 instructors:
 
 # Learner Profiles
-profiles:
+profiles: 
 
 # Customisation ---------------------------------------------
 #
