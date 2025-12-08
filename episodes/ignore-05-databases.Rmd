@@ -207,10 +207,10 @@ head(SN7577_d, n = 10)
 nrow(SN7577_d)
 
 # Apply dplyr functions to the object
-SN7577_d %>%
-  filter(numage > 60) %>%
-  select(sex, age, numage) %>%
-  group_by(sex, age) %>%
+SN7577_d |> 
+  filter(numage > 60) |> 
+  select(sex, age, numage) |> 
+  group_by(sex, age) |> 
   summarize(avg_age = mean(numage))
 ```
 
@@ -219,7 +219,7 @@ Notice that on the `nrow` command we get NA rather than a count of rows. Thisis 
 If you need the row count you can use
 
 ```{r}
-SN7577_d %>%
+SN7577_d |> 
   tally()
 ```
 
@@ -235,9 +235,9 @@ SN7577_d %>%
 > > ```{r}
 > > SN7577_d <- tbl(mydb_dplyr, sql("SELECT * FROM SN7577"))
 > >
-> > SN7577_d %>%
-> >   filter(Q2 == -1)   %>%
-> >   group_by(sex)   %>%
+> > SN7577_d |> 
+> >   filter(Q2 == -1)   |> 
+> >   group_by(sex)   |> 
 > >   summarize(avg_age = mean(numage))
 > > ```
 > >

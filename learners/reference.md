@@ -6,7 +6,7 @@ Hm...
 
 ## Glossary
 
-The pipe, %>%, is made using ctrl+shift+m on a windows computer. On a mac use
+The pipe, |>, is made using ctrl+shift+m on a windows computer. On a mac use
 option+shift+m.
 
 Vertical line, |, used as an OR-operator is found next to the backspace on the right
