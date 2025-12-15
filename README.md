@@ -53,8 +53,4 @@ complete the initial configuration of a new lesson repository built from this te
       in line with the terms of the CC-BY license,
       you should ensure that the copyright information 
       provided in the license file is accurate for your project.
-1. **Update this README with 
-   [relevant information about your lesson](https://carpentries.github.io/lesson-development-training/collaborating-newcomers.html#readme)**
-   and delete this section.
-
 [workbench]: https://carpentries.github.io/sandpaper-docs/
