@@ -214,7 +214,7 @@ movieSerie[1, 1]
 movieSerie[1, 6]
 
 ## first column of the tibble (as a vector, truncated, rather than showing all 5850 values)
-movieSerie[[1]] %>% head()
+movieSerie[[1]] |> head()
 
 ## first column of the tibble
 movieSerie[1]
