@@ -1,56 +1,15 @@
-# The Carpentries Workbench Template Markdown Lesson
+# _KUB Datalab: R for absolute beginners_ <a href="https://kubdatalab.github.io/R-intro/"><img src="episodes/fig/stickerattempt.png" align="right" height="138" alt="KUB Datalab R-intro website" /></a>
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench].
+<!-- badges: start -->
 
-Med visset tilføjelser og justeringer som KUB Datalab har behov for. Logo og favico
+<!-- badges: end -->
 
-## Configure a new lesson
 
-Follow the steps below to
-complete the initial configuration of a new lesson repository built from this template:
+This is an introduction to working with R, designed for participants with
+no prior programming experience. It can be taught in 2 hours.
 
-1. **Make sure GitHub Pages is activated:**
-   navigate to _Settings_,
-   select _Pages_ from the left sidebar,
-   and make sure that `gh-pages` is selected as the branch to build from.
-   If no `gh-pages` branch is available, check _Actions_ to see if the first
-   website build workflows are still running.
-   The branch should become available when those have completed.
-1. **Adjust the `config.yaml` file:**
-   this file contains global parameters for your lesson site.
-   Individual fields within the file are documented with comments (beginning with `#`)
-   At minimum, you should adjust all the fields marked 'FIXME':
-   - `title`
-   - `created`
-   - `keywords`
-   - `life_cycle` (the default, _pre-alpha_, is the appropriate for brand new lessons)
-   - `contact`
-1. **Annotate the repository** with site URL and topic tags:
-   navigate back to the repository landing page and
-   click on the gear wheel/cog icon (similar to ⚙️) 
-   at the top-right of the _About_ box.
-   Check the "Use your GitHub Pages website" option,
-   and [add some keywords and other annotations to describe your lesson](https://cdh.carpentries.org/the-carpentries-incubator.html#topic-tags)
-   in the _Topics_ field.
-   At minimum, these should include:
-   - `lesson`
-   - the life cycle of the lesson (e.g. `pre-alpha`)
-   - the human language the lesson is written in (e.g. `deutsch`)
-1. **Adjust the 
-   `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, and `LICENSE.md` files**
-   as appropriate for your project.
-   -  `CODE_OF_CONDUCT.md`: 
-      if you are using this template for a project outside The Carpentries,
-      you should adjust this file to describe 
-      who should be contacted with Code of Conduct reports,
-      and how those reports will be handled.
-   -  `CONTRIBUTING.md`:
-      depending on the current state and maturity of your project,
-      the contents of the template Contributing Guide may not be appropriate.
-      You should adjust the file to help guide contributors on how best
-      to get involved and make an impact on your lesson.
-   -  `LICENSE.md`:
-      in line with the terms of the CC-BY license,
-      you should ensure that the copyright information 
-      provided in the license file is accurate for your project.
-[workbench]: https://carpentries.github.io/sandpaper-docs/
+
+## KUB Datalab
+
+[KUB Datalab](https://kub.kb.dk/datalab){target="_blank"} is [Copenhagen University Library](https://kub.ku.dk/english/){target="_blank"}'s center for working with data. Our primary focus is to support students at the [University of Copenhagen](https://www.ku.dk/en){target="_blank"} in regards to theri work with data and digital methods.
+
