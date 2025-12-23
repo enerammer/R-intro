@@ -29,7 +29,7 @@ In case you have made changes to the original object we made. We read in the dat
 in a new object
 
 ```{r load-data, purl=FALSE, eval=T, echo=T, results="hide"}
-movieSerie_plotting <- read_csv("data/movieSerie.csv", na = c("NA", "NULL"))
+movieSerie_plotting <- read_csv("data/movie_series.csv", na = c("NA", "NULL"))
 ```
 
 

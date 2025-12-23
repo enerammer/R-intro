@@ -41,8 +41,7 @@ exercises: 10
 ```{r, include = FALSE}
 library(dplyr)
 library(readr)
-movieSerie <- read_csv("data/movieSerie.csv", na = c("NA", "NULL"))
-#interviews <- read_csv("../data/SAFI_clean.csv", na = "NULL")
+movieSerie <- read_csv("data/movie_series.csv", na = c("NA", "NULL"))
 ```
 
 **`dplyr`** is a package for making tabular data wrangling easier by using a
@@ -472,12 +471,12 @@ re-generate them.
 Now we can save this data frame to our `data_output` directory.
 
 ```{r, purl = FALSE, eval = FALSE}
-write_csv(movieSerie_ch, file = "data_output/movieSerie_changed.csv")
+write_csv(movieSerie_ch, file = "data_output/movie_series_changed.csv")
 ```
 
 ```{r, purl = FALSE, eval = TRUE, echo = FALSE}
 if (!dir.exists("../data_output")) dir.create("../data_output")
-write_csv(movieSerie_ch, "../data_output/movieSerie_changed.csv")
+write_csv(movieSerie_ch, "../data_output/movie_series_changed.csv")
 ```
 
 :::: keypoints
