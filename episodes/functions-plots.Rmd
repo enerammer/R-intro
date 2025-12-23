@@ -29,7 +29,7 @@ In case you have made changes to the original object we made. We read in the dat
 in a new object
 
 ```{r load-data, purl=FALSE, eval=T, echo=T, results="hide"}
-movieSerie_plotting <- read_csv("data/movie_series.csv", na = c("NA", "NULL"))
+movie_series_plotting <- read_csv("data/movie_series.csv", na = c("NA", "NULL"))
 ```
 
 
@@ -49,7 +49,7 @@ of the x-axis and one containing the values for the y-axis. Here we use the
 $-notation:
 
 ```{r first-scatterplot}
-plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score)
+plot(movie_series_plotting$release_year, movie_series_plotting$imdb_score)
 ```
 
 Scatterplots are useful for showing that sort for relationships in the data.
@@ -57,7 +57,7 @@ Here it does not appear that the correlation exists; there is no clear trend.
 
 We might want to adjust the labels on the axes, and add a main title:
 ```{r}
-plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score, 
+plot(movie_series_plotting$release_year, movie_series_plotting$imdb_score, 
      main = "Relation between release date and their imdb_score",
      xlab = "Release year",
      ylab = "imdb score")
@@ -67,7 +67,7 @@ plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score,
 ## Boxplots 
 We can use boxplots to visualize the distribution of number of imdb_score for genre:
 ```{r}
-boxplot(movieSerie_plotting$imdb_score~movieSerie_plotting$genre)
+boxplot(movie_series_plotting$imdb_score~movie_series_plotting$genre)
 ```
 
 :::: instructor
@@ -104,7 +104,7 @@ outliers are either very interesting, or something that we can ignore.
 
 Another useful plottype are histograms. 
 ```{r}
-hist(movieSerie_plotting$runtime)
+hist(movie_series_plotting$runtime)
 ```
 
 Histograms counts the number of observations in our data, that lies between 
