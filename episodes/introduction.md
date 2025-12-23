@@ -100,7 +100,6 @@ dynamic reports with {knitr}, so we now use mathjax to describe this:
 
 `$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
 
-Cool, right?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
