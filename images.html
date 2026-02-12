@@ -34,17 +34,8 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="lc-logo" alt="Library Carpentry" src="assets/images/library-logo.svg"><span class="badge text-bg-info">
-          <abbr title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.">
-            <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#polishing-beta-stage" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-circle" style="border-radius: 5px"></i>
-              Beta
-            </a>
-            <span class="visually-hidden">This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.</span>
-          </abbr>
-        </span>
-
-      </div>
+        <img id="lc-logo" alt="Library Carpentry" src="assets/images/library-logo.svg">
+</div>
     </div>
     <div class="selector-container">
       <div id="theme-selector">
@@ -74,6 +65,7 @@
           </ul>
 </li>
       </div>
+
 
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -121,7 +113,9 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<li><a class="dropdown-item" href="reference.html">Reference</a></li>
+          </ul>
 </li>
       </ul>
 </div>
@@ -241,7 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="00-intro.html">1. Before we Start</a>
+        <a href="intro.html">1. Before we Start</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -253,7 +247,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="01-intro-to-r.html">2. Introduction to R</a>
+        <a href="intro-to-r.html">2. Introduction to R</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -265,7 +259,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="02-starting-with-data.html">3. Starting with Data</a>
+        <a href="starting-with-data.html">3. Starting with Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -277,7 +271,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="03-dplyr-tidyr.html">4. Data Wrangling with dplyr and tidyr</a>
+        <a href="dplyr-tidyr.html">4. Data Wrangling with dplyr and tidyr</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -289,7 +283,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="04-functions-plots.html">5. A couple of plots. And making our own functions</a>
+        <a href="functions-plots.html">5. A couple of plots. And making our own functions</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -301,7 +295,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="05-whats-next.html">6. What is the next step?</a>
+        <a href="whats-next.html">6. What is the next step?</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -334,7 +328,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-
+                      <li><a href="reference.html">Reference</a></li>
                     </ul>
 </div>
                 </div>
@@ -364,63 +358,44 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="00-intro"><h2 class="section-heading"><a href="00-intro.html">Before we Start</a></h2>
+<section id="intro"><h2 class="section-heading"><a href="intro.html">Before we Start</a></h2>
 <hr class="half-width">
-<h3 id="00-intro-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘RStudio extends what R can do, and makes it easier to write R code and interact with R.’</p>
-<figure><img src="./fig/r-manual.jpeg" alt="RStudio extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
-<h3 id="00-intro-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘automatic car gear shift representing the ease of RStudio’</p>
-<figure><img src="./fig/r-automatic.jpeg" alt="automatic car gear shift representing the ease of RStudio" width="100%" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
-<h3 id="00-intro-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘A picture of RStudios interface’</p>
-<figure><img src="fig/R_00_Rstudio_01.png" alt="A picture of RStudios interface" class="figure mx-auto d-block"><div class="figcaption">RStudio interface</div>
+<h3 id="intro-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Positron extends what R can do, and makes it easier to write R code and interact with R.’</p>
+<figure><img src="./fig/r-manual.jpeg" alt="Positron extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
+<h3 id="intro-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘automatic car gear shift representing the ease of Positron’</p>
+<figure><img src="./fig/r-automatic.jpeg" alt="automatic car gear shift representing the ease of Positron" width="100%" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
+<h3 id="intro-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A picture of Positron interface’</p>
+<figure><img src="fig/R_00_Positron_01.png" alt="A picture of Positron interface" class="figure mx-auto d-block"><div class="figcaption">Positron interface</div>
 </figure><hr>
-<h3 id="00-intro-figure-4">Figure 4</h3>
+<h3 id="intro-figure-4">Figure 4</h3>
 <p aria-hidden="true">Image 1 of 1: ‘A picture showing the layout of a good working directory as described above’</p>
 <figure><img src="fig/rstudio_project_files.jpeg" alt="A picture showing the layout of a good working directory as described above" class="figure mx-auto d-block"><div class="figcaption">Example of a working directory structure</div>
-</figure><hr>
-<h3 id="00-intro-figure-5">Figure 5</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Packages pane’</p>
-<figure><img src="fig/packages_pane.png" alt="Packages pane" class="figure mx-auto d-block"><div class="figcaption">Packages pane</div>
-</figure><hr>
-<h3 id="00-intro-figure-6">Figure 6</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Install Packages Window’</p>
-<figure><img src="fig/R_00_Rstudio_03.png" alt="Install Packages Window" class="figure mx-auto d-block"><div class="figcaption">Install Packages Window</div>
-</figure><hr></section><section id="01-intro-to-r"><h2 class="section-heading"><a href="01-intro-to-r.html">Introduction to R</a></h2>
-<hr class="half-width"></section><section id="02-starting-with-data"><h2 class="section-heading"><a href="02-starting-with-data.html">Starting with Data</a></h2>
+</figure><hr></section><section id="intro-to-r"><h2 class="section-heading"><a href="intro-to-r.html">Introduction to R</a></h2>
+<hr class="half-width"></section><section id="starting-with-data"><h2 class="section-heading"><a href="starting-with-data.html">Starting with Data</a></h2>
 <hr class="half-width">
-<h3 id="02-starting-with-data-figure-1">Figure 1</h3>
+<h3 id="starting-with-data-figure-1">Figure 1</h3>
 <p aria-hidden="true">Image 1 of 1: ‘A 3 by 3 data frame with columns showing numeric, character and logical values.’</p>
 <p><img src="fig/data-frame.svg" alt="A 3 by 3 data frame with columns showing numeric, character and logical values." class="figure">{alt
 = ‘A 3 by 3 data frame with columns showing numeric, character and
 logical values.’}</p>
-<hr></section><section id="03-dplyr-tidyr"><h2 class="section-heading"><a href="03-dplyr-tidyr.html">Data Wrangling with dplyr and tidyr</a></h2>
-<hr class="half-width"></section><section id="04-functions-plots"><h2 class="section-heading"><a href="04-functions-plots.html">A couple of plots. And making our own functions</a></h2>
+<hr></section><section id="dplyr-tidyr"><h2 class="section-heading"><a href="dplyr-tidyr.html">Data Wrangling with dplyr and tidyr</a></h2>
+<hr class="half-width"></section><section id="functions-plots"><h2 class="section-heading"><a href="functions-plots.html">A couple of plots. And making our own functions</a></h2>
 <hr class="half-width">
-<h3 id="04-functions-plots-figure-1">Figure 1</h3>
-<figure><img src="fig/04-functions-plots-rendered-first-scatterplot-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
-<h3 id="04-functions-plots-figure-2">Figure 2</h3>
-<figure><img src="fig/04-functions-plots-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
-<h3 id="04-functions-plots-figure-3">Figure 3</h3>
-<p><img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" class="figure">
-Two new things happens here. First, we are using a new way of telling
-the plot function what relationship we want to visualise. The function
-notation y~x, tells the boxplot function that we want to visualise y as
-a function of x. In this case we want to visualise the number of people,
-as af function of the wall type. Secondly, we use a boxplot. A boxplots
-shows the distribution of the values on the y-axis. The median value is
-indicated by the solid bar. The box encapsulates 50% of the
-observations. Its upper and lower borders represents the interquartile
-range (IQR). The whiskers on the plot - here only the upper whiskers are
-shown due to the nature of the data, represents the range of the data.
-The distance from the upper part of the box, to the whisker is 1.5 times
-the interquartile range. The dots that we see for muddaub and sunbricks
-are outliers. Observations that lies so far from the rest of the
-observations, that we consider them as outliers.</p>
-<hr>
-<h3 id="04-functions-plots-figure-4">Figure 4</h3>
-<figure><img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr></section><section id="05-whats-next"><h2 class="section-heading"><a href="05-whats-next.html">What is the next step?</a></h2>
+<h3 id="functions-plots-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘[decorative]’</p>
+<figure><img src="fig/functions-plots-rendered-first-scatterplot-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
+<h3 id="functions-plots-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘[decorative]’</p>
+<figure><img src="fig/functions-plots-rendered-unnamed-chunk-1-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
+<h3 id="functions-plots-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘[decorative]’</p>
+<figure><img src="fig/functions-plots-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr>
+<h3 id="functions-plots-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘[decorative]’</p>
+<figure><img src="fig/functions-plots-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><hr></section><section id="whats-next"><h2 class="section-heading"><a href="whats-next.html">What is the next step?What should I do next?<a class="anchor" aria-label="anchor" href="#what-should-i-do-next"></a></a></h2>
 <hr class="half-width"></section>
 </div>
     </main>
@@ -439,15 +414,17 @@ observations, that we consider them as outliers.</p>
 	
         | <a href="https://github.com/KUBDatalab/R-intro/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/KUBDatalab/R-intro/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/KUBDatalab/R-intro/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:kubdatalab@kb.dk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
-			</div>
-			<div class="col-md-6">
+        <p>
+        <a href="https://github.com/KUBDatalab/R-intro/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:kubdatalab@kb.dk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+		</div>
+		<div class="col-md-6">
 
-        <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
+        <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0-SA</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.10" class="external-link">sandpaper (0.16.10)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.7" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
-			</div>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.5" class="external-link">sandpaper (0.18.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+		</div>
 		</footer>
 </div> <!-- / div.container -->
 	<div id="to-top">
@@ -458,19 +435,19 @@ observations, that we consider them as outliers.</p>
   <script type="application/ld+json">
     {
   "@context": "https://schema.org",
-  "@type": "TrainingMaterial",
+  "@type": "LearningResource",
   "@id": "https://KUBDatalab.github.io/R-intro/images.html",
   "inLanguage": "en",
-  "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+  "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries, KUB Datalab",
   "name": "All Images",
   "creativeWorkStatus": "active",
   "url": "https://KUBDatalab.github.io/R-intro/images.html",
   "identifier": "https://KUBDatalab.github.io/R-intro/images.html",
-  "dateCreated": "2024-02-14",
-  "dateModified": "2025-01-07",
-  "datePublished": "2025-01-07"
+  "dateCreated": "2026-01-19",
+  "dateModified": "2026-02-12",
+  "datePublished": "2026-02-12"
 }
 
   </script><script>
