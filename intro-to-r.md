@@ -64,7 +64,7 @@ x <- 3
 the left. So, after executing `x <- 3`, the value of `x` is `3`. The arrow can
 be read as 3 **goes into** `x`.
 
-In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (push <kbd>Alt</kbd> at the
+In Positron, typing <kbd>Alt</kbd> + <kbd>-</kbd> (push <kbd>Alt</kbd> at the
 same time as the <kbd>-</kbd> key) will write `<- ` in a single keystroke in a
 PC, while typing <kbd>Option</kbd> + <kbd>-</kbd> (push <kbd>Option</kbd> at the
 same time as the <kbd>-</kbd> key) does the same in a Mac.
@@ -138,72 +138,78 @@ the object name:
 
 
 ``` r
-area_hectares <- 1.0    # doesn't print anything
-area_hectares         # but typing the name of the object print
+runtime_minutes <- 51    # doesn't print anything
+runtime_minutes         # but typing the name of the object print
 ```
 
 ``` output
-[1] 1
+[1] 51
 ```
 
 ``` r
-(area_hectares <- 1.0)  # putting parenthesis around the call also print
+(runtime_minutes <- 51)  # putting parenthesis around the call also print
 ```
 
 ``` output
-[1] 1
+[1] 51
 ```
 
 ### Doing math on objects
 
-Now that R has `area_hectares` in memory, we can do arithmetic with it. For instance, we may want to convert this area into acres (area in acres is 2.47 times the area in hectares): 
+Now that R has `runtime_minutes` in memory, we can do arithmetic with it. For instance, we may want to convert the runtime in minutes into runtime in seconds (runtime in seconds is 60 times the runtime in minutes), store it in a new object, and view it: 
 
 
 ``` r
-2.47 * area_hectares
+runtime_seconds <- 60 * runtime_minutes
+runtime_seconds
 ```
 
 ``` output
-[1] 2.47
+[1] 3060
 ```
 
 We can also change an object’s value by assigning it a new one:
 
 
 ``` r
-area_hectares <- 2.5
-2.47 * area_hectares
+runtime_minutes <- 114
+```
+
+That would correspond to this many seconds:
+
+``` r
+60 * runtime_minutes
 ```
 
 ``` output
-[1] 6.175
+[1] 6840
 ```
 
-Assigning a value to one object does not automatically change the values of other objects. For example, let’s store the plot’s area in acres in a new object, `area_acres`:
+Assigning a value to one object does not automatically change the values of other objects. For example, let's store the runtime in seconds as new object, `runtime_seconds`:
 
 
 ``` r
-area_acres <- 2.47 * area_hectares
+runtime_seconds <- 60 * runtime_minutes
 ```
 
-and then change `area_hectares` to 50.
+and then change `runtime_minutes` back to 51.
 
 
 ``` r
-area_hectares <- 50
+runtime_minutes <- 51
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 ## Exercise
-What do you think is the current content of the object `area_acres`? 123.5 or 6.175?
+What do you think is the current content of the object `runtime_seconds`? 6840 or 3060?
 
 :::::::::::::::::::::::: solution
 
 ## Solution
 
-The value of `area_acres` is still 6.175 because you have not
-re-run the line `area_acres <- 2.47 * area_hectares` since
-changing the value of `area_hectares`.
+The value of `runtime_seconds` is still 6840 because you have not
+re-run the line `runtime_seconds <- 60 * runtime_minutes` since
+changing the value of `runtime_minutes`.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -260,22 +266,22 @@ or include them after any code on the line.
 
 
 ``` r
-# land area in hectares
-area_hectares <- 1.0			
-area_acres <- area_hectares * 2.47	# convert to acres
-area_acres				# print land area in acres.
+# runtime in minutes
+runtime_hours <- 1.0		
+runtime_minutes <- runtime_hours * 60	# convert to minutes
+runtime_minutes				# print runtime in minutes.
 ```
 
 ``` output
-[1] 2.47
+[1] 60
 ```
 
-RStudio makes it easy to comment or uncomment a paragraph: after selecting the
+Positron makes it easy to comment or uncomment a paragraph: after selecting the
 lines you  want to comment, press at the same time on your keyboard
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>. If you only want to comment
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>'''</kbd>. If you only want to comment
 out one line, you can put the cursor at any location of that line (i.e. no need
 to select the whole line), then press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
-<kbd>C</kbd>.
+<kbd>'</kbd>.
 
 
 ## Functions and their arguments
@@ -291,7 +297,7 @@ is called *calling* the function. An example of a function call is:
 
 
 ``` r
-b <- sqrt(area_acres)
+b <- sqrt(runtime_minutes)
 ```
 Here, the value of `a` is given to the `sqrt()` function, the `sqrt()` function
 calculates the square root, and returns the value which is then assigned to
@@ -337,6 +343,19 @@ args(round)
 function (x, digits = 0, ...) 
 NULL
 ```
+
+
+:::: callout
+
+## NULL
+The function `args()` does not produce an actual result, that we can store and continue working with. Instead it types the required arguments of the function (in this case `round()`) and `NULL`. `NULL` indicates that there is nothing at all. It is not a missing value; instead, there is simply nothing
+
+Besides returning the required arguments of the given function (in this case round()), it also writes NULL.
+
+`args()` som funktion giver ikke et egentligt resultat, som vi ka. Funktionen udskriver definitionen af den ønskede funktion (i dette tilfælde round())med tilhørende argumenter. Funktionen har dog en sideeffekt, hvor den printer noget, men hvor `round()` giver et resultat som vi kan gemme og arbejde videre med, giver `args()` intet resultat. `NULL´ angiver at der slet ikke er noget. Det er ikke en manglende værdi, istedet er der intet.
+
+T The function has a side effect in that it prints something, but whereas `round()` produces a result we can store and continue working with, `args()` produces no result. `NULL` indicates that there is nothing at all. It is not a missing value; instead, there is simply nothing.
+::::
 
 
 ``` r
@@ -695,7 +714,7 @@ imdb_score > 70    # will return logicals with TRUE for the indices that meet th
 ```
 
 ``` r
-## so we can use this to select only the values above 5
+## so we can use this to select only the values above 70
 imdb_score[imdb_score > 70]
 ```
 
@@ -935,8 +954,8 @@ length(rooms_above_2)
 Normaly we do not work with data in seperate vectors. Instead it would be in 
 a spreadsheet like format. In R this is called data frame
 
-A dataframe is made up by columns of vectors, so we can combine the three vectors 
-to a dataframe.
+A data frame is made up by columns of vectors, so we can combine the three vectors 
+to a data frame.
 
 
 
@@ -967,8 +986,8 @@ data frames.
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Access individual values by location using `[]`.
-- Access arbitrary sets of data using `[c(...)]`.
-- Use logical operations and logical vectors to access subsets of data.
+- Access individual values by location using `[]`
+- Access arbitrary sets of data using `[c(...)]`
+- Use logical operations and logical vectors to access subsets of data
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

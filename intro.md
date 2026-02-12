@@ -6,7 +6,7 @@ exercises: 5
 
 :::: questions
 
-- How to find your way around RStudio?
+- How to find your way around Positron?
 - How to interact with R?
 - How to manage your environment?
 - How to install packages?
@@ -15,27 +15,27 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Install latest version of R.
-- Install latest version of RStudio.
-- Navigate the RStudio GUI.
-- Install additional packages using the packages tab.
-- Install additional packages using R code.
+- Install latest version of R
+- Install latest version of Positron
+- Navigate the Positron GUI
+- Install additional packages using the packages tab
+- Install additional packages using R code
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## What is R? What is RStudio?
+## What is R? What is Positron?
 
 The term "`R`" is used to refer to both the programming language and the
 software that interprets the scripts written in R.
 
-[RStudio](https://posit.co/) is currently a very popular way to not only write
-your R scripts but also to interact with the R software. RStudio is the most
+[Positron](https://positron.posit.co/) is currently a very popular way to not only write
+your R scripts but also to interact with the R software. Positron is the most
 popular IDE (Integrated Development Environmemt) for R. An IDE is a piece of
 software that provides tools to make programming easier.
 
-To make it easier to interact with R, we will use RStudio. To function correctly,
-RStudio needs R and therefore both need to be installed on your computer.
+To make it easier to interact with R, we will use Positron. To function correctly,
+Positron needs R and therefore both need to be installed on your computer.
 
 
 ## Why learn R?
@@ -100,7 +100,7 @@ aspect of your graph to convey most effectively the message from your data.
 
 Thousands of people use R daily. Many of them are willing to help you through
 mailing lists and websites such as [Stack Overflow](https://stackoverflow.com/),
-or on the [Posit Community](https://community.rstudio.com/). Questions which
+or on the [Positron Community](https://forum.posit.co/). Questions which
 are backed up with [short, reproducible code
 snippets](https://www.tidyverse.org/help/) are more likely to attract
 knowledgeable responses.
@@ -117,54 +117,52 @@ freely available to extend R's native capabilities.
 
 
 
-<img src="./fig/r-manual.jpeg" alt="RStudio extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" />
+<img src="./fig/r-manual.jpeg" alt="Positron extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" />
 
 
-<img src="./fig/r-automatic.jpeg" alt="automatic car gear shift representing the ease of RStudio" width="100%" style="display: block; margin: auto;" />
+<img src="./fig/r-automatic.jpeg" alt="automatic car gear shift representing the ease of Positron" width="100%" style="display: block; margin: auto;" />
 
-RStudio extends what R can do, and makes it easier to write R code and interact
+Positron extends what R can do, and makes it easier to write R code and interact
 with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.
 
 
 
 
-## A tour of RStudio
+## A tour of Positron
 
-Let's start by learning about [RStudio](https://posit.co/), which is an
+Let's start by learning about [Positron](https://positron.posit.co/), which is an
 Integrated Development Environment (IDE) for working with R.
 
-The RStudio IDE open-source product is free under the
-[Affero General Public License (AGPL) v3](https://www.gnu.org/licenses/agpl-3.0.en.html).
-The RStudio IDE is also available with a commercial license and priority email
+The Positron IDE open-source product is free under the
+[Elastic License 2.0](https://github.com/posit-dev/positron?tab=License-1-ov-file#readme).
+The Positron IDE is also available with a commercial license and priority email
 support from Posit Software, Inc.
 
-We will use the RStudio IDE to write code, navigate the files on our computer,
-inspect the variables we create, and visualize the plots we generate. RStudio
+We will use the Positron IDE to write code, navigate the files on our computer,
+inspect the variables we create, and visualize the plots we generate. Positron
 can also be used for other things (e.g., version control, developing packages,
 writing Shiny apps) that we will not cover during the workshop.
 
-One of the advantages of using RStudio is that all the information
-you need to write code is available in a single window. Additionally, RStudio
+One of the advantages of using Positron is that all the information
+you need to write code is available in a single window. Additionally, Positron
 provides many shortcuts, autocompletion, and highlighting for the major file
-types you use while developing in R. RStudio makes typing easier and less
+types you use while developing in R. Positron makes typing easier and less
 error-prone.
 
-### The RStudio Interface
+### The Positron Interface
 
-Let's take a quick tour of RStudio.
+Let's take a quick tour of Positron.
 
-![RStudio interface](fig/R_00_Rstudio_01.png){alt='A picture of RStudios interface'}
+![Positron interface](fig/R_00_Positron_01.png){alt='A picture of Positron interface'}
 
-RStudio is divided into four "panes". The placement of these
-panes and their content can be customized (see menu, Tools -> Global Options ->
-Pane Layout).
+Positron is divided into four "panes". The placement of these
+panes and their content can be customized. Click "Costumize layout" in the upper right corner.
 
 The Default Layout is:
-- Top Left - **Source**: your scripts and documents
-- Bottom Left - **Console**: what R would look and be like without RStudio
-- Top Right - **Enviornment/History**: look here to see what you have done
-- Bottom Right - **Files** and more: see the contents of the project/working
-directory here, like your Script.R file
+- Top Center - **Code editor**: your scripts and documents
+- Bottom Center - **Console**: what R would look and be like without Positron
+- Top Right - **Variables**: your objects and data frames
+- Bottom Right - **Plots**: see your visualisations
 
 ### Getting set up
 
@@ -177,35 +175,33 @@ this way makes it a lot easier to move your project around on your computer and
 share it with others without having to directly modify file paths in the
 individual scripts.
 
-RStudio provides a helpful set of tools to do this through its "Projects"
+Positron provides a helpful set of tools to do this through its "Project Folder"
 interface, which not only creates a working directory for you but also remembers
 its location (allowing you to quickly navigate to it). The interface also
 (optionally) preserves custom settings and open files to make it easier to
 resume work after a break.
 
-An easy way to work like this is to create projects in RStudio.
+An easy way to work like this is to create project folders in Positron.
 
 
-### Create a new project and a new script file
+### Create a new project folder and a new script file
 
-* Under the `File` menu, click on `New project`, choose `New directory`, then
-  `New project`
-* Enter a name for this new folder (or "directory") and choose a convenient
+* Under the `File` menu, click on `New Folder from Template`, choose `R Project`, then click
+  `Next`
+* Enter a name for this new folder and choose a convenient
   location for it. This will be your **working directory** for working on this
-  project (e.g., `~/data-carpentry`)
-* Click on `Create project`
-* Create a new file where we will type our scripts. Go to File > New File > R
+  project (e.g., `~/r_intro`)
+* Click on `Next`
+* Choose `Project Configurations` by selecting the version of R you wish to work with.
+* Click `Create`
+* A new unsaved script is automatically created. Click <kbd>ctrl</kbd>/cmd-s to save
+* Create a new file where you will type our scripts. Go to File > New File > R
   script. Click the save icon on your toolbar and save your script as
   "`script.R`".
 
-The simplest way to open an RStudio project once it has been created is to 
-navigate through your filesystem to where the project was saved and double
-click on the `.Rproj` (blue cube) file. This will open RStudio and start your R
-session in the **same** directory as the `.Rproj` file. All your data, plots and
-scripts will now be relative to the project directory. RStudio projects have the
-added benefit of allowing you to open multiple projects at the same time each
-open to its own project directory. This allows you to keep multiple projects
-open without them interfering with each other.
+The simplest way to open an existing Positron project folder is to open Positron and select the project folder from the drop-down menu in the upper-right corner.
+
+By doing it this way, you have easy acces to the data, plots and scripts belonging to your project folder.
 
 ### Organizing your working directory
 
@@ -243,19 +239,17 @@ where R will look for and save files. When you write code for your project, your
 scripts should refer to files in relation to the root of your working directory
 and only to files within this structure.
 
-Using RStudio projects makes this easy and ensures that your working directory
+Using the Positron project folder structure makes this easy and ensures that your working directory
 is set up properly. If you need to check it, you can use `getwd()`. If for some
-reason your working directory is not the same as the location of your RStudio 
-project, it is likely that you opened an R script or RMarkdown file **not** your
-`.Rproj` file. You should close out of RStudio and open the `.Rproj` file by 
-double clicking on the blue cube! 
+reason your working directory is not the same as the location of your Positron 
+project folder, it is likely that you opened an R script or RMarkdown file. 
 
 
 ### Downloading the data and getting set up
 
 For this lesson we will use the following folders in our working directory:
 **`data/`**, **`data_output/`** and **`fig_output/`**. Let's write them all in
-lowercase to be consistent. We can create them using the RStudio interface by
+lowercase to be consistent. We can create them using the Positron interface by
 clicking on the "New Folder" button in the file pane (bottom right), or directly
 from R by typing at console:
 
@@ -266,18 +260,16 @@ dir.create("data_output")
 dir.create("fig_output")
 ```
 
-Begin by downloading the dataset called ["`movieSerie.csv`"](/data/movieSerie.csv). 
-Place this downloaded file in the `data/` you just created. You can do this directly 
-from R by copying and pasting this in your terminal (your instructor can place this chunk of code in
-the Etherpad):
+Begin by downloading the dataset called `movie_series.csv` and place it in the `data`-folder you just created. You can do this directly 
+from Positron by copying this R-code and pasting it in your terminal:
 
 
 ``` r
-download.file("https://raw.githubusercontent.com/KUBDatalab/R-intro/main/episodes/data/movieSerie.csv", "data/movieSerie.csv", mode = "wb")
+download.file("https://raw.githubusercontent.com/KUBDatalab/R-intro/main/episodes/data/movie_series.csv", "data/movie_series.csv", mode = "wb")
 ```
 
 
-## Interacting with R
+## Interacting with R in Positron
 
 The basis of programming is that we write down instructions for the computer to
 follow, and then we tell the computer to follow those instructions. We write, or
@@ -286,35 +278,33 @@ and we can understand. We call the instructions *commands* and we tell the
 computer to follow the instructions by *executing* (also called *running*) those
 commands.
 
-There are two main ways of interacting with R: by using the console or by using
+There are two main ways of interacting with R in Positron: by using the console or by using
 script files (plain text files that contain your code). The console pane (in
-RStudio, the bottom left panel) is the place where commands written in the R
-language can be typed and executed immediately by the computer. It is also where
+Positron, the lower center panel) is the place where commands written in the R
+language can be typed and executed immediately by the computer. This is also where
 the results will be shown for commands that have been executed. You can type
 commands directly into the console and press <kbd>Enter</kbd> to execute those
-commands, but they will be forgotten when you close the session.
+commands. However, they will be forgotten when you close the session.
 
 Because we want our code and workflow to be reproducible, it is better to type
 the commands we want in the script editor and save the script. This way, there
-is a complete record of what we did, and anyone (including our future selves!)
+is a complete record of what we did, and anyone (including our future selves)
 can easily replicate the results on their computer.
 
-RStudio allows you to execute commands directly from the script editor by using
+Positron allows you to execute commands directly from the script editor by using
 the <kbd>Ctrl</kbd> + <kbd>Enter</kbd> shortcut (on Mac, <kbd>Cmd</kbd> +
 <kbd>Return</kbd> will work). The command on the current line in the
 script (indicated by the cursor) or all of the commands in
 selected text will be sent to the console and executed when you press
 <kbd>Ctrl</kbd> + <kbd>Enter</kbd>. If there is information in the console
 you do not need anymore, you can clear it with <kbd>Ctrl</kbd> + <kbd>L</kbd>.
-You can find other keyboard shortcuts in this
-[RStudio cheatsheet about the RStudio IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf).
+<!-- You can find other keyboard shortcuts in this -->
+<!-- [Positron cheatsheet about the Positron IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf). -->
 
 At some point in your analysis, you may want to check the content of a variable
 or the structure of an object without necessarily keeping a record of it in
 your script. You can type these commands and execute them directly in the
-console.  RStudio provides the <kbd>Ctrl</kbd> + <kbd>1</kbd> and
-<kbd>Ctrl</kbd> + <kbd>2</kbd> shortcuts allow you to jump between the
-script and the console panes.
+console.
 
 If R is ready to accept commands, the R console shows a `>` prompt. If R
 receives a command (by typing, copy-pasting, or sent from the script editor using
@@ -322,97 +312,60 @@ receives a command (by typing, copy-pasting, or sent from the script editor usin
 ready, will show the results and come back with a new `>` prompt to wait for new
 commands.
 
-If R is still waiting for you to enter more text,
-the console will show a `+` prompt. It means that you haven't finished entering
-a complete command. This is likely because you have not 'closed' a parenthesis or
-quotation, i.e. you don't have the same number of left-parentheses as
-right-parentheses or the same number of opening and closing quotation marks.
-When this happens, and you thought you finished typing your command, click
-inside the console window and press <kbd>Esc</kbd>; this will cancel the
-incomplete command and return you to the `>` prompt. You can then proofread
-the command(s) you entered and correct the error.
+If this does not happen it means that your code is incomplete. In other words R is waiting for more information in order to execute the code. To correct this, delete the latest line in the console, add the missing information in your script and run the code in question again.
 
+Incomplete lines of code are often caused by an uneven number of parantheses or qoutation markes. It could also be caused by spelling mistakes.
 
-## Installing additional packages using the packages tab
+## Packages
 
 In addition to the core R installation, there are in excess of
 18,000 additional packages which can be used to extend the
 functionality of R. Many of these have been written by R users and
 have been made available in central repositories, like the one
 hosted at CRAN, for anyone to download and install into their own R
-environment. You should have already installed the packages 'ggplot2'
-and 'dplyr. If you have not, please do so now using these instructions.
+environment. 
 
-### Installing additional packages using RStudio
 
-You can see if you have a package installed by looking in the `packages` tab
-(on the lower-right by default). You can also type the command
+### Installing additional packages using Positron
+
+You can see if you have a package installed by typing the command
 `installed.packages()` into the console and examine the output.
 
-![Packages pane](fig/packages_pane.png)
+If you wish to install a package, write `install.packages()` with the name of the package in quotation marks between the two parantheses.
 
-Additional packages can be installed from the ‘packages’ tab.
-On the packages tab, click the ‘Install’ icon and start typing the
-name of the package you want in the text box. As you type, packages
-matching your starting characters will be displayed in a drop-down
-list so that you can select them.
+Because installing packages requires access to the CRAN repository, an internet connection is necessary.
 
-![Install Packages Window](fig/R_00_Rstudio_03.png)
-
-At the bottom of the Install Packages window is a check box to
-‘Install’ dependencies. This is ticked by default, which is usually
-what you want. Packages can (and do) make use of functionality
-built into other packages, so for the functionality contained in
-the package you are installing to work properly, there may be other
-packages which have to be installed with them. The ‘Install
-dependencies’ option makes sure that this happens.
-
-Because the install process accesses the CRAN repository, you
-will need an Internet connection to install packages.
-
-It is also possible to install packages from other repositories, as
+It is also possible to install packages from other repositories as
 well as Github or the local file system, but we won’t be looking at these options in this lesson.
 
 
-### Installing additional packages using R code
+### Installing `tidyverse`
 
-If you were watching the console window when you started the
-install of ‘tidyverse’, you may have noticed that the line
+For this course we need the package `tidyverse`, so in order to install this packages you can write the following in the console
 
 
 ``` r
 install.packages("tidyverse")
 ```
 
-was written to the console before the start of the installation messages.
-
-You could also have installed the **`tidyverse`** packages by running this command directly at the R terminal.
+The `tidyverse` package is really a package consisting of several packages. Among these are `ggplot2` and `dplyr`, both of which require other packages to run correctly.
+All of these packages will be installed automatically, when you install `tidyverse`. The installation time may vary, depending on what has already been installed. As the install proceeds, messages relating to its progress will be written to the console.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-Use both the Console and the Packages tab to confirm that you have the tidyverse
-installed.
+Use the console to confirm you have the `tidyverse` installed.
 
 :::::::::::::::::::::::: solution
 
-Scroll through packages tab down to ‘tidyverse’. You can also type a few
-characters into the searchbox.
-The ‘tidyverse’ package is really a package of packages, including
-'ggplot2' and 'dplyr', both of which require other packages to run correctly.
-All of these packages will be installed automatically. Depending on what
-packages have previously been installed in your R environment, the install of
-‘tidyverse’ could be very quick or could take several minutes. As the install
-proceeds, messages relating to its progress will be written to the console.
-You will be able to see all of the packages which are actually being
-installed.
 
-In the console. If you write tidy it should put up if it is installed. Look for tidyverse::
+Type `tidy` in the console. Based on the four letters, Positron will auto-suggest `tidyverse`, if the package has already been installed. Depending on the network connection, you might have to allow a few seconds the the auto-suggest to work.
+
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use RStudio to write and run R programs.
-- Use `install.packages()` to install packages (libraries).
+- Use Positron to write and execute R scripts
+- Use `install.packages()` to install packages (libraries)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

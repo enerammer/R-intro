@@ -8,10 +8,10 @@ exercises: 10
 
 :::: questions
 
-- How can I select specific rows and/or columns from a dataframe?
+- How can I select specific rows and/or columns from a data-frame?
 - How can I combine multiple commands into a single command?
-- How can I create new columns or remove existing columns from a dataframe?
-- How can I reformat a dataframe to meet my needs?
+- How can I create new columns or remove existing columns from a data frame?
+- How can I reformat a data frame to meet my needs?
 
 ::::
 
@@ -19,22 +19,22 @@ exercises: 10
 :::: objectives
 
 - Describe the purpose of an R package and the **`dplyr`** and **`tidyr`** packages.
-- Select certain columns in a dataframe with the **`dplyr`** function `select`.
-- Select certain rows in a dataframe according to filtering conditions with the **`dplyr`**
+- Select certain columns in a data frame with the **`dplyr`** function `select`.
+- Select certain rows in a data frame according to filtering conditions with the **`dplyr`**
   function `filter`.
 - Link the output of one **`dplyr`** function to the input of another function with
-  the 'pipe' operator `%>%`.
-- Add new columns to a dataframe that are functions of existing columns with `mutate`.
+  the 'pipe' operator ` |> `.
+- Add new columns to a data frame that are functions of existing columns with `mutate`.
 - Use the split-apply-combine concept for data analysis.
-- Use `summarize`, `group_by`, and `count` to split a dataframe into groups of observations,
+- Use `summarize`, `group_by`, and `count` to split a data frame into groups of observations,
   apply a summary statistics for each group, and then combine the results.
 - Describe the concept of a wide and a long table format and for which purpose those
   formats are useful.
 - Describe the roles of variable names and their associated values when a table is
   reshaped.
-- Reshape a dataframe from long to wide format and back with the `pivot_wider` and
+- Reshape a data frame from long to wide format and back with the `pivot_wider` and
   `pivot_longer` commands from the **`tidyr`** package.
-- Export a dataframe to a csv file.
+- Export a data frame to a csv file.
 
 ::::
 
@@ -64,13 +64,13 @@ tidyverse. These packages were loaded in R's memory when we called
 ## What is an R package?
 
 The package **`dplyr`** provides easy tools for the most common data
-wrangling tasks. It is built to work directly with dataframes, with many
+wrangling tasks. It is built to work directly with data frames, with many
 common tasks optimized by being written in a compiled language (C++) (not all R
 packages are written in R!).
 
 The package **`tidyr`** addresses the common problem of wanting to reshape your
 data for plotting and use by different R functions. Sometimes we want data sets
-where we have one row per measurement. Sometimes we want a dataframe where each
+where we have one row per measurement. Sometimes we want a data frame where each
 measurement type has its own column, and rows are instead more aggregated
 groups. Moving back and forth between these formats is nontrivial, and
 **`tidyr`** gives you tools for this and more sophisticated data wrangling.
@@ -83,7 +83,7 @@ packages such as these are housed on, and downloadable from, the
 This function makes the package accessible by your R installation with the
 command `library()`, as you did with `tidyverse` earlier.
 
-To easily access the documentation for a package within R or RStudio, use
+To easily access the documentation for a package within R or Positron, use
 `help(package = "package_name")`.
 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
@@ -106,16 +106,16 @@ We're going to learn some of the most common **`dplyr`** functions:
 
 ## Selecting columns and filtering rows
 
-To select columns of a dataframe, use `select()`. The first argument to this
-function is the dataframe (`movieSerie`), and the subsequent arguments are the
+To select columns of a data frame, use `select()`. The first argument to this
+function is the data frame (`movie_series`), and the subsequent arguments are the
 columns to keep, separated by commas. Alternatively, if you are selecting
 columns adjacent to each other, you can use a `:` to select a range of columns,
 read as "select columns from ___ to ___."
 
 
 ``` r
-# to select columns throughout the dataframe
-select(movieSerie, title, description)
+# to select columns throughout the data frame
+select(movie_series, title, description)
 ```
 
 ``` output
@@ -137,7 +137,7 @@ select(movieSerie, title, description)
 
 ``` r
 # to select a series of connected columns
-select(movieSerie, title:description)
+select(movie_series, title:description)
 ```
 
 ``` output
@@ -158,13 +158,13 @@ select(movieSerie, title:description)
 ```
 
 To choose rows based on specific criteria, we can use the `filter()` function.
-The argument after the dataframe is the condition we want our final
-dataframe to adhere to (e.g. age_certification is PG-13): 
+The argument after the data frame is the condition we want our final
+data frame to adhere to (e.g. age_certification is PG-13): 
 
 
 ``` r
 # filters observations where age_certification name is "PG-13" 
-filter(movieSerie, age_certification == "PG-13")
+filter(movie_series, age_certification == "PG-13")
 ```
 
 ``` output
@@ -189,15 +189,15 @@ filter(movieSerie, age_certification == "PG-13")
 We can also specify multiple conditions within the `filter()` function. We can
 combine conditions using either "and" or "or" statements. In an "and" 
 statement, an observation (row) must meet **every** criteria to be included
-in the resulting dataframe. To form "and" statements within dplyr, we can  pass
+in the resulting data frame. To form "and" statements within dplyr, we can  pass
 our desired conditions as arguments in the `filter()` function, separated by
 commas:
 
 
 ``` r
 # filters observations with "and" operator (comma)
-# output dataframe satisfies ALL specified conditions
-filter(movieSerie, age_certification == "PG-13",
+# output data frame satisfies ALL specified conditions
+filter(movie_series, age_certification == "PG-13",
                    runtime > 100,
                    imdb_score < 6.0)
 ```
@@ -226,8 +226,8 @@ We can also form "and" statements with the `&` operator instead of commas:
 
 ``` r
 # filters observations with "&" logical operator
-# output dataframe satisfies ALL specified conditions
-filter(movieSerie, age_certification == "PG-13" & 
+# output data frame satisfies ALL specified conditions
+filter(movie_series, age_certification == "PG-13" & 
                    runtime > 100 & 
                    imdb_score < 6.0)
 ```
@@ -257,8 +257,8 @@ To form "or" statements we use the logical operator for "or," which is the verti
 
 ``` r
 # filters observations with "|" logical operator
-# output dataframe satisfies AT LEAST ONE of the specified conditions
-filter(movieSerie, age_certification == "PG-13" | 
+# output data frame satisfies AT LEAST ONE of the specified conditions
+filter(movie_series, age_certification == "PG-13" | 
                    runtime > 100 | 
                    imdb_score < 6.0)
 ```
@@ -288,13 +288,13 @@ filter(movieSerie, age_certification == "PG-13" |
 What if you want to select and filter at the same time? There are three
 ways to do this: use intermediate steps, nested functions, or pipes.
 
-With intermediate steps, you create a temporary dataframe and use
+With intermediate steps, you create a temporary data frame and use
 that as input to the next function, like this:
 
 
 ``` r
-movieSerie2 <- filter(movieSerie, age_certification == "PG-13")
-movieSerie_ch <- select(movieSerie2, title:description)
+movie_series2 <- filter(movie_series, age_certification == "PG-13")
+movie_series_ch <- select(movie_series2, title:description)
 ```
 
 This is readable, but can clutter up your workspace with lots of objects that
@@ -305,7 +305,7 @@ You can also nest functions (i.e. one function inside of another), like this:
 
 
 ``` r
-movieSerie_ch <- select(filter(movieSerie, age_certification == "PG-13"),
+movie_series_ch <- select(filter(movie_series, age_certification == "PG-13"),
                          title:description)
 ```
 
@@ -313,18 +313,20 @@ This is handy, as R evaluates the expression from the inside out (in this case,
 filtering, then selecting), but it can be difficult to read if too many 
 functions are nested, 
 
-The last option, *pipes*, are a recent addition to R. Pipes let you take the
+The last option is *pipes*. Pipes let you take the
 output of one function and send it directly to the next, which is useful when
-you need to do many things to the same dataset. Pipes in R look like `%>%` and
-are made available via the **`magrittr`** package, installed automatically with
-**`dplyr`**. If you use RStudio, you can type the pipe with:  
+you need to do many things to the same dataset. The pipe is build into R and looks like ` |> `. If you use Positron, you can type the pipe with:  
 - <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a PC or <kbd>Cmd</kbd> +
-<kbd>Shift</kbd> + <kbd>M</kbd> if you have a Mac.
+<kbd>Shift</kbd> + <kbd>M</kbd> if you have a Mac. 
+
+A previous incarnation looks like `%>%`. Both pipes work the exact same way.
+
+If you are using Positron, the above keyboard shortcuts will result in ` |> `. 
 
 
 ``` r
-movieSerie %>%
-    filter(age_certification == "PG-13") %>%
+movie_series |> 
+    filter(age_certification == "PG-13") |> 
     select(title,description)
 ```
 
@@ -345,15 +347,15 @@ movieSerie %>%
 # ℹ 441 more rows
 ```
 
-In the above code, we use the pipe to send the `movieSerie` dataset first
+In the above code, we use the pipe to send the `movie_series` dataset first
 through `filter()` to keep rows where `age_certification` is "PG-13", then through
-`select()` to keep only the `title` and `description` columns. Since `%>%`
+`select()` to keep only the `title` and `description` columns. Since ` |> `
 takes the object on its left and passes it as the first argument to the function
-on its right, we don't need to explicitly include the dataframe as an argument
+on its right, we don't need to explicitly include the data frame as an argument
 to the `filter()` and `select()` functions any more.
 
 Some may find it helpful to read the pipe like the word "then". For instance,
-in the above example, we take the dataframe `movieSerie`, *then* we `filter`
+in the above example, we take the data frame `movie_series`, *then* we `filter`
 for rows with `age_certification == "PG-13"`, *then* we `select` columns `title` and
 `description`. The **`dplyr`** functions by themselves are somewhat simple,
 but by combining them into linear workflows with the pipe, we can accomplish
@@ -364,11 +366,11 @@ can assign it a new name:
 
 
 ``` r
-movieSerie_ch <- movieSerie %>%
-    filter(age_certification == "PG-13") %>%
+movie_series_ch <- movie_series |> 
+    filter(age_certification == "PG-13") |> 
     select(title,description)
 
-movieSerie_ch
+movie_series_ch
 ```
 
 ``` output
@@ -388,7 +390,7 @@ movieSerie_ch
 # ℹ 441 more rows
 ```
 
-Note that the final dataframe (`movieSerie_ch`) is the leftmost part of this
+Note that the final data frame (`movie_series_ch`) is the leftmost part of this
 expression.
 
 
@@ -397,7 +399,7 @@ expression.
 
 ## Exercise
 
-Using pipes, subset the `movieSerie` data set to include movieSerie
+Using pipes, subset the `movie_series` data set to include movie_series
 have a `release_year` greater than 1980 and retain only the columns `title`,
  `runtime`, and `age_certification`.
  
@@ -409,8 +411,8 @@ have a `release_year` greater than 1980 and retain only the columns `title`,
 
 
 ``` r
-movieSerie %>%
-     filter(release_year > 1980) %>%
+movie_series |> 
+     filter(release_year > 1980) |> 
      select(title, runtime, age_certification)
 ```
 
@@ -444,8 +446,8 @@ We might be interested in knowing the differences in scores on imdb vs tmdb:
 
 
 ``` r
-movieSerie %>%
-  mutate(score_difference = imdb_score - tmdb_score) %>% 
+movie_series |> 
+  mutate(score_difference = imdb_score - tmdb_score) |> 
   select(imdb_score, tmdb_score, score_difference)
 ```
 
@@ -471,12 +473,12 @@ movieSerie %>%
 
 ## Exercise
 
-Create a new dataframe from the `movieSerie` data set that meets the following
+Create a new data frame from the `movie_series` data set that meets the following
 criteria: contains only the `title` column and a new column called
 `total_score` containing a value that is equal to the total number of scores on 
 both imdb and tmdb (`imdb_score` plus `tmdb_score`).
 Only the rows where `total_score` is greater than 15 should be shown in the
-final dataframe.
+final data frame.
 
 **Hint**: think about how the commands should be ordered to produce the data
 frame!
@@ -487,9 +489,9 @@ frame!
 
 
 ``` r
-movieSerie_total_score <- movieSerie %>%
-  mutate(total_score = imdb_score + tmdb_score) %>%
-  filter(total_score > 15) %>%
+movie_series_total_score <- movie_series |> 
+  mutate(total_score = imdb_score + tmdb_score) |> 
+  filter(total_score > 15) |> 
   select(title, total_score)
 ```
 
@@ -514,8 +516,8 @@ genre:
 
 
 ``` r
-movieSerie %>%
-    group_by(genre) %>%
+movie_series |> 
+    group_by(genre) |> 
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE))
 ```
 
@@ -545,20 +547,24 @@ movieSerie %>%
 ```
 
 You may also have noticed that the output from these calls doesn't run off the
-screen anymore. It's one of the advantages of `tbl_df` over dataframe.
+screen anymore. It's one of the advantages of `tbl_df` over data frame.
 
 You can also group by multiple columns:
 
 
 ``` r
-movieSerie %>%
-    group_by(genre, type) %>%
+movie_series |> 
+    group_by(genre, type) |> 
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE))
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre and type.
+ℹ Output is grouped by genre.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre, type))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -584,15 +590,19 @@ Note that the output is a grouped tibble. To obtain an ungrouped tibble, use the
 
 
 ``` r
-movieSerie %>%
-    group_by(genre, type) %>%
-    summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE)) %>%
+movie_series |> 
+    group_by(genre, type) |> 
+    summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE)) |> 
     ungroup()
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre and type.
+ℹ Output is grouped by genre.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre, type))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -620,15 +630,19 @@ column indicating the maximum imdb_score given to a movie or serie:
 
 
 ``` r
-movieSerie %>%
-    group_by(genre, type) %>%
+movie_series |> 
+    group_by(genre, type) |> 
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
               max_imdb_score = max(imdb_score, na.rm = TRUE))
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre and type.
+ℹ Output is grouped by genre.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre, type))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -656,16 +670,20 @@ imdb_score first:
 
 
 ``` r
-movieSerie %>%
-    group_by(genre, type) %>%
+movie_series |> 
+    group_by(genre, type) |> 
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
-              max_imdb_score = max(imdb_score, na.rm = TRUE)) %>%
+              max_imdb_score = max(imdb_score, na.rm = TRUE)) |> 
     arrange(max_imdb_score)
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre and type.
+ℹ Output is grouped by genre.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre, type))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -691,16 +709,20 @@ sort the results by decreasing order of minimum imdb_score:
 
 
 ``` r
-movieSerie %>%
-    group_by(genre, type) %>%
+movie_series |> 
+    group_by(genre, type) |> 
     summarize(mean_imdb_score = mean(imdb_score, na.rm = TRUE),
-              max_imdb_score = max(imdb_score, na.rm = TRUE)) %>%
+              max_imdb_score = max(imdb_score, na.rm = TRUE)) |> 
     arrange(desc(max_imdb_score))
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre and type.
+ℹ Output is grouped by genre.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre, type))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -730,7 +752,7 @@ each village, we would do:
 
 
 ``` r
-movieSerie %>%
+movie_series |> 
     count(release_year)
 ```
 
@@ -756,7 +778,7 @@ decreasing order:
 
 
 ``` r
-movieSerie %>%
+movie_series |> 
     count(release_year, sort = TRUE)
 ```
 
@@ -793,7 +815,7 @@ tmdb_score. Also add the number of observations (hint: see `?n`).
 
 
 ``` r
- movieSerie %>%
+ movie_series |> 
   count(age_certification)
 ```
 
@@ -823,8 +845,8 @@ tmdb_score. Also add the number of observations (hint: see `?n`).
 
 
 ``` r
-movieSerie %>%
-  group_by(genre) %>%
+movie_series |> 
+  group_by(genre) |> 
    summarize(
        mean_tmdb_score = mean(tmdb_score, na.rm = TRUE),
        min_tmdb_score = min(tmdb_score, na.rm = TRUE),
@@ -868,7 +890,7 @@ or summarize your raw data, you may want to export these new data sets to share
 them with your collaborators or for archival.
 
 Similar to the `read_csv()` function used for reading CSV files into R, there is
-a `write_csv()` function that generates CSV files from dataframes.
+a `write_csv()` function that generates CSV files from data frames.
 
 Before using `write_csv()`, we are going to create a new folder, `data_output`,
 in our working directory that will store this generated dataset. We don't want
@@ -879,24 +901,24 @@ it. In contrast, our script will generate the contents of the `data_output`
 directory, so even if the files it contains are deleted, we can always
 re-generate them.
 
-Now we can save this dataframe to our `data_output` directory.
+Now we can save this data frame to our `data_output` directory.
 
 
 ``` r
-write_csv(movieSerie_ch, file = "data_output/movieSerie_changed.csv")
+write_csv(movie_series_ch, file = "data_output/movie_series_changed.csv")
 ```
 
 
 
 :::: keypoints
 
-- Use the `dplyr` package to manipulate dataframes.
-- Use `select()` to choose variables from a dataframe.
-- Use `filter()` to choose data based on values.
-- Use `group_by()` and `summarize()` to work with subsets of data.
-- Use `mutate()` to create new variables.
-- Use the `tidyr` package to change the layout of dataframes.
-- Use `pivot_wider()` to go from long to wide format.
-- Use `pivot_longer()` to go from wide to long format.
+- Use the `dplyr` package to manipulate data frames
+- Use `select()` to choose variables from a data frame
+- Use `filter()` to choose data based on values
+- Use `group_by()` and `summarize()` to work with subsets of data
+- Use `mutate()` to create new variables
+- Use the `tidyr` package to change the layout of data frames
+- Use `pivot_wider()` to go from long to wide format
+- Use `pivot_longer()` to go from wide to long format
 
 ::::
