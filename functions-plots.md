@@ -299,7 +299,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 5.19874
+[1] 4.581321
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general
